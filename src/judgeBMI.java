@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.*;//�ޤJ�u���Ʈw
 public class judgeBMI {
 	
 	public static double standardW(double H, double W, double bmi)//�p��n�W�δ�魫�q
