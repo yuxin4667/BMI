@@ -1,94 +1,94 @@
-import java.util.*;//¤Þ¤J¤u¨ã¸ê®Æ®w
+import java.util.*;
 public class judgeBMI {
 	
-	public static double standardW(double H, double W, double bmi)//­pºâ­n¼W©Î´îªºÅé­«¶q
+	public static double standardW(double H, double W, double bmi)//ï¿½pï¿½ï¿½nï¿½Wï¿½Î´îªºï¿½é­«ï¿½q
 	{
-		double suggestW;//ÅÜ¼Æ:«ØÄ³¼W´îÅé­«¶q
-		if(bmi<18.5)//­Y¹L»´¡A«hsuggestW¬°¼W­«¶q
+		double suggestW;//ï¿½Ü¼ï¿½:ï¿½ï¿½Ä³ï¿½Wï¿½ï¿½ï¿½é­«ï¿½q
+		if(bmi<18.5)//ï¿½Yï¿½Lï¿½ï¿½ï¿½Aï¿½hsuggestWï¿½ï¿½ï¿½Wï¿½ï¿½ï¿½q
 			suggestW=18.5*H*H-W;
-		else//­Y¹L­«¡A«hsuggestW¬°´î­«¶q
+		else//ï¿½Yï¿½Lï¿½ï¿½ï¿½Aï¿½hsuggestWï¿½ï¿½ï¿½î­«ï¿½q
 			suggestW=W-24*H*H;
 		return (Math.round(suggestW*100.0)/100.0);
 	}	
 	
-	public static void judge(double H, double W, double bmi)//Åé¦ì§PÂ_
+	public static void judge(double H, double W, double bmi)//ï¿½ï¿½ï¿½Pï¿½_
 	{
 		double suggestW;
 		//nested if/else
-		if(bmi>=18.5 && bmi<24)//Åé­«¥¿±`
+		if(bmi>=18.5 && bmi<24)//ï¿½é­«ï¿½ï¿½ï¿½`
 		{
-			System.out.println("Åé­«¥¿±`¡AÄ~Äò«O«ù");
+			System.out.println("ï¿½é­«ï¿½ï¿½ï¿½`ï¿½Aï¿½~ï¿½ï¿½Oï¿½ï¿½");
 		}
-		else //Åé­«²§±`
+		else //ï¿½é­«ï¿½ï¿½ï¿½`
 		{
-			suggestW=standardW(H, W, bmi);//«ØÄ³¼W´îÅé­«¶q
+			suggestW=standardW(H, W, bmi);//ï¿½ï¿½Ä³ï¿½Wï¿½ï¿½ï¿½é­«ï¿½q
 			if(bmi<18.5)
-				System.out.println("Åé­«¹L»´¡A«ØÄ³¼W­«¦Ü¤Ö"+suggestW+"¤½¤ç");
+				System.out.println("ï¿½é­«ï¿½Lï¿½ï¿½ï¿½Aï¿½ï¿½Ä³ï¿½Wï¿½ï¿½ï¿½Ü¤ï¿½"+suggestW+"ï¿½ï¿½ï¿½ï¿½");
 			else if(bmi<27)
-				System.out.println("¹L­«¡A«ØÄ³´î­«¦Ü¤Ö"+suggestW+"¤½¤ç");
+				System.out.println("ï¿½Lï¿½ï¿½ï¿½Aï¿½ï¿½Ä³ï¿½î­«ï¿½Ü¤ï¿½"+suggestW+"ï¿½ï¿½ï¿½ï¿½");
 			else if(bmi<30)
-				System.out.println("»´«×ªÎ­D¡A«ØÄ³´î­«¦Ü¤Ö"+suggestW+"¤½¤ç");
+				System.out.println("ï¿½ï¿½ï¿½×ªÎ­Dï¿½Aï¿½ï¿½Ä³ï¿½î­«ï¿½Ü¤ï¿½"+suggestW+"ï¿½ï¿½ï¿½ï¿½");
 			else if(bmi<35)
-				System.out.println("¤¤«×ªÎ­D¡A«ØÄ³´î­«¦Ü¤Ö"+suggestW+"¤½¤ç");
+				System.out.println("ï¿½ï¿½ï¿½×ªÎ­Dï¿½Aï¿½ï¿½Ä³ï¿½î­«ï¿½Ü¤ï¿½"+suggestW+"ï¿½ï¿½ï¿½ï¿½");
 			else
-				System.out.println("­««×ªÎ­D¡A«ØÄ³´î­«¦Ü¤Ö"+suggestW+"¤½¤ç");
+				System.out.println("ï¿½ï¿½ï¿½×ªÎ­Dï¿½Aï¿½ï¿½Ä³ï¿½î­«ï¿½Ü¤ï¿½"+suggestW+"ï¿½ï¿½ï¿½ï¿½");
 		}
 	}
 
 	public static void main(String[] args) 
 	{
 		Scanner sc=new Scanner(System.in);
-		double height, weight, bmi; //³]ÅÜ¼Æ:¨­°ª¡AÅé­«¡Abmi­È
-		int input=0;//³]ÅÜ¼Æ:¿ï³æ(¬°¤F¥Îswitch)
+		double height, weight, bmi; //ï¿½]ï¿½Ü¼ï¿½:ï¿½ï¿½ï¿½ï¿½ï¿½Aï¿½é­«ï¿½Abmiï¿½ï¿½
+		int input=0;//ï¿½]ï¿½Ü¼ï¿½:ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½Fï¿½ï¿½switch)
 		
-		while(input!=2)//¥i­«½Æ¿é¤J
+		while(input!=2)//ï¿½iï¿½ï¿½ï¿½Æ¿ï¿½J
 		{
-			//switch»s§@¿é¤J¿ï³æ
-			System.out.print("½Ð°Ý§A·Q­n1.­pºâbmi 2.Â÷¶}:");
+			//switchï¿½sï¿½@ï¿½ï¿½Jï¿½ï¿½ï¿½
+			System.out.print("ï¿½Ð°Ý§Aï¿½Qï¿½n1.ï¿½pï¿½ï¿½bmi 2.ï¿½ï¿½ï¿½}:");
 			input=sc.nextInt();
 			switch(input)
 			{
 			case 1:
 				while(true)
 				{
-					System.out.print("½Ð¿é¤J¨­°ª(¤½¤Ø):");//¿é¤J¨­°ª¦s¤JÅÜ¼Æ
+					System.out.print("ï¿½Ð¿ï¿½Jï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½):");//ï¿½ï¿½Jï¿½ï¿½ï¿½ï¿½ï¿½sï¿½Jï¿½Ü¼ï¿½
 					height=sc.nextDouble();
-					if(height>2.5 || height<0.35)//if¤Îcondition operator§PÂ_¬O§_¦X²zªº­È
+					if(height>2.5 || height<0.35)//ifï¿½ï¿½condition operatorï¿½Pï¿½_ï¿½Oï¿½_ï¿½Xï¿½zï¿½ï¿½ï¿½ï¿½
 					{
-						System.out.println("¿é¤J¨­°ª¤£²Å¡A½Ð­«·s¿é¤J");
-						continue;//¨­°ª¤£¦X²z¡A¦A¦¸¿é¤J¨­°ª
+						System.out.println("ï¿½ï¿½Jï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å¡Aï¿½Ð­ï¿½ï¿½sï¿½ï¿½J");
+						continue;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Xï¿½zï¿½Aï¿½Aï¿½ï¿½ï¿½ï¿½Jï¿½ï¿½ï¿½ï¿½
 					}
-					break;//¨­°ª¦X²z¡A¸õ¥X°j°é¶i¦æ¤U¤@¨B
+					break;//ï¿½ï¿½ï¿½ï¿½ï¿½Xï¿½zï¿½Aï¿½ï¿½ï¿½Xï¿½jï¿½ï¿½iï¿½ï¿½Uï¿½@ï¿½B
 				}
 				
 				while(true)
 				{
-					System.out.print("½Ð¿é¤JÅé­«(¤½¤ç):");//¿é¤JÅé­«¦s¤JÅÜ¼Æ
+					System.out.print("ï¿½Ð¿ï¿½Jï¿½é­«(ï¿½ï¿½ï¿½ï¿½):");//ï¿½ï¿½Jï¿½é­«ï¿½sï¿½Jï¿½Ü¼ï¿½
 					weight=sc.nextDouble();	
-					if(weight<5)//if§PÂ_¬O§_¦X²zªº­È
+					if(weight<5)//ifï¿½Pï¿½_ï¿½Oï¿½_ï¿½Xï¿½zï¿½ï¿½ï¿½ï¿½
 					{
-						System.out.println("¿é¤JÅé­«¤£²Å¡A½Ð­«·s¿é¤J");//Åé­«¤£¦X²z¡A¦A¦¸¿é¤J¨­°ª
+						System.out.println("ï¿½ï¿½Jï¿½é­«ï¿½ï¿½ï¿½Å¡Aï¿½Ð­ï¿½ï¿½sï¿½ï¿½J");//ï¿½é­«ï¿½ï¿½ï¿½Xï¿½zï¿½Aï¿½Aï¿½ï¿½ï¿½ï¿½Jï¿½ï¿½ï¿½ï¿½
 						continue;
 					}
-					break;//Åé­«¦X²z¡A¸õ¥X°j°é¶i¦æ¤U¤@¨B
+					break;//ï¿½é­«ï¿½Xï¿½zï¿½Aï¿½ï¿½ï¿½Xï¿½jï¿½ï¿½iï¿½ï¿½Uï¿½@ï¿½B
 				}
-				bmi=weight/(height*height);//­pºâBMI
-				bmi=Math.round(bmi*100.0)/100.0;//BMI¥|±Ë¤­¤J¨ì¤p¼ÆÂI¨â¦ì
-				System.out.println("±zªºBMI¬°"+bmi);//¦L¥XBMI
+				bmi=weight/(height*height);//ï¿½pï¿½ï¿½BMI
+				bmi=Math.round(bmi*100.0)/100.0;//BMIï¿½|ï¿½Ë¤ï¿½ï¿½Jï¿½ï¿½pï¿½ï¿½ï¿½Iï¿½ï¿½ï¿½
+				System.out.println("ï¿½zï¿½ï¿½BMIï¿½ï¿½"+bmi);//ï¿½Lï¿½XBMI
 				
-				judge(height, weight, bmi);//§PÂ_Åé¦ì
+				judge(height, weight, bmi);//ï¿½Pï¿½_ï¿½ï¿½ï¿½
 				break;
 			
-			case 2://Â÷¶}
+			case 2://ï¿½ï¿½ï¿½}
 				System.out.println("BYE!");
 				break;
-			default://¿ï³æ¿é¤J­È¦³»~
-				System.out.println("½Ð¿ï¾Ü1©Î¬O2");
+			default://ï¿½ï¿½ï¿½ï¿½Jï¿½È¦ï¿½ï¿½~
+				System.out.println("ï¿½Ð¿ï¿½ï¿½1ï¿½Î¬O2");
 				break;
 			}
 			System.out.println("---------------------------");
 		}
 		
-		sc.close();//Ãö³¬Scanner
+		sc.close();//ï¿½ï¿½ï¿½ï¿½Scanner
 	}
 }
